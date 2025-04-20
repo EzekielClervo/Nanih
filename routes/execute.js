@@ -1,7 +1,4 @@
-const fetch = require('node-fetch');
-const { setTimeout } = require('timers/promises');
-
-async function execute(req, res) {
+module.exports = (fetch) => async function execute(req, res) {
     try {
         const { cookie, post, shareCount, delay } = req.body;
 
@@ -10,17 +7,17 @@ async function execute(req, res) {
             'cookie': cookie
         };
 
-        const result = await sharePost(headers, post, shareCount, delay);
+        const result = await sharePost(headers, post, shareCount, delay, fetch);
         res.json(result);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
+};
 
-async function sharePost(headers, post, shareCount, delay) {
+async function sharePost(headers, post, shareCount, delay, fetch) {
     let count = 0;
     while (count < shareCount) {
-        await setTimeout(delay * 1000);
+        await new Promise(resolve => setTimeout(resolve, delay * 1000));
         try {
             const response = await fetch(`${post}&published=0`, {
                 method: 'POST',
@@ -36,5 +33,3 @@ async function sharePost(headers, post, shareCount, delay) {
         }
     }
 }
-
-module.exports = execute;
