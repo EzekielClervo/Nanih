@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Post Sharer</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="animate__animated animate__fadeInDown">Facebook Post Sharer</h1>
+        
+        <!-- Tab Navigation -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('cookie')">Cookie</div>
+            <div class="tab" onclick="switchTab('appstate')">Appstate</div>
+            <div class="tab" onclick="switchTab('login')">Login</div>
+        </div>
+
+        <!-- Tab Contents -->
+        <div id="cookie" class="tab-content">
+            <!-- Cookie Tab Form -->
+            <div class="input-group">
+                <label for="cookie">Cookie:</label>
+                <textarea id="cookie" rows="4"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="post">Post Link:</label>
+                <input type="text" id="post">
+            </div>
+            <div class="input-group">
+                <label for="count">Count:</label>
+                <input type="number" id="count" min="1" max="50000">
+            </div>
+            <div class="input-group">
+                <label for="delay">Delay (seconds):</label>
+                <input type="number" id="delay" min="0" max="50000">
+            </div>
+            <button onclick="submit('cookie')">Submit</button>
+        </div>
+
+        <!-- Other tabs (Appstate and Login) -->
+        <!-- Add similar HTML structure for other tabs -->
+
+        <div class="results" id="results"></div>
+    </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>
