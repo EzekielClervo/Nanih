@@ -1,6 +1,4 @@
-const fetch = require('node-fetch');
-
-async function checkCookie(req, res) {
+module.exports = (fetch) => async function checkCookie(req, res) {
     try {
         const { cookie } = req.body;
         const response = await fetch(`your-aso-endpoint${cookie}`);
@@ -9,6 +7,4 @@ async function checkCookie(req, res) {
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
-}
-
-module.exports = checkCookie;
+};
