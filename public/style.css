@@ -1,0 +1,81 @@
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #333;
+    border: 1px solid #444;
+    border-radius: 4px 4px 0 0;
+    transition: background-color 0.3s;
+}
+
+.tab.active {
+    background-color: #2d2d2d;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.tab-content {
+    background-color: #2d2d2d;
+    padding: 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+input, textarea {
+    background-color: #333;
+    border: 1px solid #444;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.error {
+    color: #ff4444;
+    margin-top: 5px;
+}
+
+.success {
+    color: #4CAF50;
+    margin-top: 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
